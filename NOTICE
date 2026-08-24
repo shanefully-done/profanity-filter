@@ -1,0 +1,20 @@
+profanity-ko-en
+
+Data sources and licenses:
+
+(a) Korean pattern data (single-char normalization map, multi-char
+    replacements, category pattern lists, false-positive lists) derived
+    from https://github.com/Tanat05/korcen by Tanat05, MIT License.
+    Modifications applied: fixed a source missing-comma bug ('ㅈㅗ118'
+    split back into two entries), deduplicated entries, added
+    normalization-closure variants, added original patterns
+    ('씨발','시ㅏ발','ㅅㅏ발','sl발') and an original English
+    leet map.
+
+(b) English word list derived from the `en` list of
+    https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words,
+    licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/),
+    with the addition of 'balls' (original to this project).
+
+(c) Engine implementation and all other files are original to this
+    project, MIT License.

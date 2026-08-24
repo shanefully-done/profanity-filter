@@ -1,0 +1,46 @@
+{
+	"name": "profanity-ko-en",
+	"version": "0.1.0",
+	"description": "Zero-dependency Korean+English profanity filter \u2014 check, detect, and censor text with Korean obfuscation handling",
+	"type": "module",
+	"license": "MIT",
+	"author": "Shane Lx",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shanefully-done/profanity-filter.git"
+	},
+	"keywords": [
+		"profanity",
+		"profanity-filter",
+		"korean",
+		"\ud55c\uad6d\uc5b4",
+		"\ube44\uc18d\uc5b4",
+		"\uc695\uc124",
+		"censor",
+		"mask",
+		"badwords",
+		"filter"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": false,
+	"engines": {
+		"node": ">=20.10"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json && cp -r src/data dist/data",
+		"test": "bun test",
+		"prepublishOnly": "bun run build"
+	},
+	"devDependencies": {
+		"typescript": "^5.6.0",
+		"@types/bun": "^1.3.0"
+	}
+}
