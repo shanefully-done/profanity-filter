@@ -214,6 +214,21 @@ describe("censor — false positives unchanged", () => {
 	}
 })
 
+describe("censor — FP entries must not mask across token boundaries", () => {
+	it("masks 씨발 followed by a token starting with 끝", () => {
+		expect(censor("씨발 끝")).toBe("** 끝")
+	})
+	it("masks 씨발 in 씨발 끝났다 (common phrasing)", () => {
+		expect(censor("씨발 끝났다")).toBe("** 끝났다")
+	})
+	it("leaves the innocent word 발끝 unchanged", () => {
+		expect(censor("발끝")).toBe("발끝")
+	})
+	it("leaves 발끝 까지 unchanged", () => {
+		expect(censor("발끝 까지")).toBe("발끝 까지")
+	})
+})
+
 describe("censor — custom mask", () => {
 	it("supports single-char mask", () => {
 		expect(censor("shit", { mask: "x" })).toBe("xxxx")
