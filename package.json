@@ -35,7 +35,7 @@
 		"node": ">=20.10"
 	},
 	"scripts": {
-		"build": "tsc -p tsconfig.json && cp -r src/data dist/data",
+		"build": "tsc -p tsconfig.json && rm -rf dist/data && cp -r src/data dist/data",
 		"test": "bun test",
 		"prepublishOnly": "bun run build"
 	},
